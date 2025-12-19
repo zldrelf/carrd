@@ -292,13 +292,13 @@ a {
         justify-content: center;
         display: flex;
         padding-top: 1rem;
-        margin-bottom: -2px;
     }
 
     .ico {
-        filter: grayscale(100%);
+
         width: 80px;
         height: auto;
+        margin-right: 10px;
     }
 }
 
@@ -312,13 +312,32 @@ a {
         justify-content: center;
         display: flex;
         padding-top: 1rem;
-        margin-bottom: -2px;
     }
 
     .ico {
-        filter: grayscale(100%);
+
         width: 80px;
         height: auto;
+        margin-right: 10px;
     }
 
+}
+
+.bgi {
+    position: absolute;
+    filter: opacity(20%);
+}
+
+.bgj {
+    position: absolute;
+    filter: opacity(10%);
+    right: 10px;
+    bottom: 10px;
+}
+
+.bgk {
+    position: absolute;
+    filter: opacity(30%);
+    right: 40em;
+    top: 1px;
 }
