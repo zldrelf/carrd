@@ -136,6 +136,7 @@ body {
     top: 0;
     left: 0;
     background-color: rgba(79, 172, 254, .7);
+    border-radius: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +174,6 @@ body {
 }
 
 .right {
-    filter: contrast(0%);
     padding-top: -1rem;
     display: flex;
     flex-direction: column;
@@ -188,7 +188,6 @@ body {
 
 .rightd {
     display: none;
-    filter: contrast(0%);
 }
 
 
@@ -237,9 +236,13 @@ body {
 
 
 .buttons-wrap {
-    filter: grayscale(60%);
+    filter: grayscale(100%);
     display: flex;
     margin-top: 5px;
+}
+
+.buttons-wrap:hover {
+    filter: grayscale(0%);
 }
 
 .follow-wrap,

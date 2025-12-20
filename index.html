@@ -17,7 +17,7 @@
             });
         </script>
     <div class="modal">
-        <img src="assets/img/bg.png" alt="">
+        <img src="assets/img/nothing.gif" alt="">
         <div class="close"></div>
     </div>
 <div class="snowfall" aria-hidden="true"></div>
@@ -25,10 +25,9 @@
 
         <div class="card">
             <div class="snowfall" aria-hidden="true"></div>
+            <div id="emoji-snowfall"></div>
+
             <div class="header">
-               <img class="bg2" src="assets/img/icons/baubles.gif">
-                <img class="bg1" src="assets/img/icons/leaves.png">
-                <img class="bgi" src="assets/img/icons/christmas.png">
                 <img class="flow" src="assets/img/icons/flow.svg">
                  <a id="toggle-mode" class="logo"><img src="assets/img/icons/dark.png" class="logo"></a>
                         <a href="#popupmenu" class="mail"><img src="assets/img/icons/menu.png" class="mail"></a>
@@ -46,6 +45,7 @@
             <div class="content">
                 <div class="left">
                     <div class="about-container">
+                        <img class="bgi" src="assets/img/icons/bg.png">
                         <h3 class="title">about info</h3>
                         <p class="text">cybersecurity researcher, foss hacktivist && btw i use arch_lnx</p>
                     </div>
@@ -157,6 +157,60 @@
                             });
 
                             </script>
+                            <script>
+                            const snowContainer = document.getElementById('emoji-snowfall');
+                            const snowflakeCount = 40; // number of snowflakes
+                            const emojis = ['❄️', '❄️', '🍂']; // different snowflake types
+
+                            for (let i = 0; i < snowflakeCount; i++) {
+                              const flake = document.createElement('div');
+                              flake.className = 'snowflake';
+
+                              // Pick random emoji
+                              flake.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+                              // Random start position
+                              flake.style.left = Math.random() * 100 + 'vw';
+                              flake.style.top = Math.random() * -100 + 'vh';
+
+                              // Random size
+                              flake.style.fontSize = (8 + Math.random() * 10) + 'px';
+
+                              // Random opacity for fade effect
+                              const opacity = 0.3 + Math.random() * 0.7;
+                              flake.style.opacity = 0;
+
+                              // Random fall duration (slower)
+                              const fallDuration = 12 + Math.random() * 20; // 12s - 32s
+                              flake.style.animation = `fall ${fallDuration}s linear infinite, fade ${fallDuration/2}s ease-in-out infinite alternate`;
+
+                              // Random sway
+                              const swayDistance = 20 + Math.random() * 40; // 20px - 60px
+                              flake.style.setProperty('--sway-distance', swayDistance + 'px');
+
+                              snowContainer.appendChild(flake);
+                            }
+
+                            // Add animations dynamically
+                            const style = document.createElement('style');
+                            style.textContent = `
+                            @keyframes fall {
+                              0% { transform: translateY(0) translateX(0) rotate(0deg); }
+                              100% { transform: translateY(110vh) translateX(var(--sway-distance)) rotate(360deg); }
+                            }
+
+                            @keyframes fade {
+                              0% { opacity: 0; }
+                              50% { opacity: 1; }
+                              100% { opacity: 0; }
+                            }
+                            `;
+                            document.head.appendChild(style);
+                            </script>
+
+
+
+
     <script src="assets/app.js"></script>
 </body>
 </html>
